@@ -1,29 +1,26 @@
 package com.paritosh.learning.springin5steps;
 
 import com.paritosh.learning.springin5steps.basic.BinarySearchImpl;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
-@SpringBootApplication
+@Configuration
+@ComponentScan
 public class SpringIn5StepsBasicApplication {
+
+	private static final Logger LOGGER = LoggerFactory.getLogger(SpringIn5StepsBasicApplication.class);
 
 	public static void main(String[] args) {
 
-
-//		BinarySearchImpl binarySearch = new BinarySearchImpl(new BubbleSortAlgorithmImpl());
-//		int result = binarySearch.search(new int[] {2,4,5});
-//		System.out.println("Search result = " + result);
-//
-
-		ApplicationContext context = SpringApplication.run(SpringIn5StepsBasicApplication.class, args);
-
+		ApplicationContext context = new AnnotationConfigApplicationContext(SpringIn5StepsBasicApplication.class);
 		BinarySearchImpl binarySearch = context.getBean(BinarySearchImpl.class);
 
-
-
-//		int result = binarySearch.search(new int[] {});
-//		System.out.println("Search result = " + result);
+		System.out.println(binarySearch);
+		LOGGER.info("{}", binarySearch);
 	}
 
 }

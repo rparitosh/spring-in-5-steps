@@ -1,7 +1,6 @@
 package com.paritosh.learning.springin5steps.basic;
 
-import jakarta.annotation.PostConstruct;
-import jakarta.annotation.PreDestroy;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,17 +26,6 @@ public class BinarySearchImpl {
 
 
         return 3;
-    }
-
-    @PostConstruct
-    public void postConstruct(){
-        LOGGER.info("in Post contruct of Binary Search impl");
-
-    }
-
-    @PreDestroy
-    public void preDestroy(){
-        LOGGER.info("in Pre Destroy of Binary Search impl");
     }
 
 }
