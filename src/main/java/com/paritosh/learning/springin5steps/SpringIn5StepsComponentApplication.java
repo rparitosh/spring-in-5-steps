@@ -1,7 +1,6 @@
 package com.paritosh.learning.springin5steps;
 
 import com.paritosh.learning.componentscan.ComponentDAO;
-import com.paritosh.learning.springin5steps.scope.PersonDAO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
