@@ -1,11 +1,13 @@
 package com.paritosh.learning.springin5steps.cdi;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component
+import javax.inject.Inject;
+import javax.inject.Named;
+
+@Named
 public class SomeCdiBusiness {
-    @Autowired
+    @Inject
     private SomeCdiDao someCdiDao;
 
     public SomeCdiDao getSomeCdiDao() {
