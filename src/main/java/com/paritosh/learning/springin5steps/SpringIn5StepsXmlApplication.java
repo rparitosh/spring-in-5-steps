@@ -10,8 +10,6 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-@Configuration
-@ComponentScan
 public class SpringIn5StepsXmlApplication {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(SpringIn5StepsXmlApplication.class);
@@ -19,10 +17,9 @@ public class SpringIn5StepsXmlApplication {
 	public static void main(String[] args) {
 
 		try( ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml")) {
-			XmlPersonDao xmlPersonDao = context.getBean(XmlPersonDao.class);
 
-			LOGGER.info("Dao :{}", xmlPersonDao);
-			LOGGER.info("JDBC Connection {}", xmlPersonDao.getConnection());
+
+			LOGGER.info("Beans loaded -> {}",(Object)context.getBeanDefinitionNames());
 		}
 	}
 
