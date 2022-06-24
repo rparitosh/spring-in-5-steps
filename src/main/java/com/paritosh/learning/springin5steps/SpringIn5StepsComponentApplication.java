@@ -19,12 +19,13 @@ public class SpringIn5StepsComponentApplication {
 
 
 
-        ApplicationContext context = new AnnotationConfigApplicationContext(SpringIn5StepsComponentApplication.class);
+        try(AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringIn5StepsComponentApplication.class)) {
 
 
-        ComponentDAO componentDAO = context.getBean(ComponentDAO.class);
+            ComponentDAO componentDAO = context.getBean(ComponentDAO.class);
 
-        LOGGER.info("Comp DAO : {}", componentDAO);
+            LOGGER.info("Comp DAO : {}", componentDAO);
+        }
 
     }
 }

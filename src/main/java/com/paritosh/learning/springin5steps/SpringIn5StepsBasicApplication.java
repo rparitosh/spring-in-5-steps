@@ -16,11 +16,12 @@ public class SpringIn5StepsBasicApplication {
 
 	public static void main(String[] args) {
 
-		ApplicationContext context = new AnnotationConfigApplicationContext(SpringIn5StepsBasicApplication.class);
-		BinarySearchImpl binarySearch = context.getBean(BinarySearchImpl.class);
+		try( AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringIn5StepsBasicApplication.class)) {
+			BinarySearchImpl binarySearch = context.getBean(BinarySearchImpl.class);
 
-		System.out.println(binarySearch);
-		LOGGER.info("{}", binarySearch);
+			System.out.println(binarySearch);
+			LOGGER.info("{}", binarySearch);
+		}
 	}
 
 }

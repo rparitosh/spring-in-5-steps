@@ -17,11 +17,12 @@ public class SpringIn5StepsCdiApplication {
 	public static void main(String[] args) {
 
 
-		ApplicationContext context = new AnnotationConfigApplicationContext(SpringIn5StepsCdiApplication.class);
+		try(AnnotationConfigApplicationContext  context = new AnnotationConfigApplicationContext(SpringIn5StepsCdiApplication.class)) {
 
-		SomeCdiBusiness someCdiBusiness = context.getBean(SomeCdiBusiness.class);
+			SomeCdiBusiness someCdiBusiness = context.getBean(SomeCdiBusiness.class);
 
-		LOGGER.info("Biz - {} ; Dao - {} ", someCdiBusiness,someCdiBusiness.getSomeCdiDao() );
+			LOGGER.info("Biz - {} ; Dao - {} ", someCdiBusiness, someCdiBusiness.getSomeCdiDao());
+		}
 
 	}
 

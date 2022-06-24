@@ -18,13 +18,14 @@ public class SpringIn5StepsScopeApplication {
 
 
 
-        ApplicationContext context = new AnnotationConfigApplicationContext(SpringIn5StepsScopeApplication.class);
+        try (AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringIn5StepsScopeApplication.class)) {
 
-        PersonDAO personDAO = context.getBean(PersonDAO.class);
+            PersonDAO personDAO = context.getBean(PersonDAO.class);
 
-        LOGGER.info("Person DAO : {}", personDAO);
-        LOGGER.info("get JDBC conn 1 : {}", personDAO.getJdbcConnection());
-        LOGGER.info("get JDBC conn 2 : {}", personDAO.getJdbcConnection());
+            LOGGER.info("Person DAO : {}", personDAO);
+            LOGGER.info("get JDBC conn 1 : {}", personDAO.getJdbcConnection());
+            LOGGER.info("get JDBC conn 2 : {}", personDAO.getJdbcConnection());
+        }
 
     }
 }
