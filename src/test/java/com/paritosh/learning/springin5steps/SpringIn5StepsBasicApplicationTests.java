@@ -1,9 +1,11 @@
 package com.paritosh.learning.springin5steps;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mockito;
+import org.springframework.test.context.junit4.SpringRunner;
 
-@SpringBootTest
+@RunWith(SpringRunner.class)
 class SpringIn5StepsBasicApplicationTests {
 
 	@Test

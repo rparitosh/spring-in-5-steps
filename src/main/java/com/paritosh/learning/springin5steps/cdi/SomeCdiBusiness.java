@@ -17,4 +17,15 @@ public class SomeCdiBusiness {
     public void setSomeCdiDao(SomeCdiDao someCdiDao) {
         this.someCdiDao = someCdiDao;
     }
+
+    public int findGreatest(){
+        int[] numbers = someCdiDao.getData();
+        int greatest = Integer.MIN_VALUE;
+        for (int i : numbers){
+            if (i > greatest){
+                greatest = i;
+            }
+        }
+        return  greatest;
+    }
 }
